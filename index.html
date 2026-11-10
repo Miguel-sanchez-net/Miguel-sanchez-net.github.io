@@ -4,93 +4,115 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Miguel Sanchez | Network Technician</title>
-<meta name="description" content="Miguel Sanchez, CCNA-certified network technician in Ontario, Canada. Cisco network infrastructure experience, labs and projects.">
+<meta name="description" content="Miguel Sanchez spent five years planning Cisco networks behind the power grid. Now CCNA certified, he builds them. Open to NOC, network and field roles in Ontario or remote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@1,400&display=swap" rel="stylesheet">
 <style>
-/* Layout: single column, a CLI "show" card as the hero, then sections read top to bottom */
+/* Layout: one column that reads like a story. Hero (thesis) -> what I bring -> my story (chapters) -> projects -> lab log -> let's work together */
 :root {
-  --bg: #f6f8fa; --surface: #ffffff; --fg: #17212b; --muted: #55636f;
-  --line: #d8dee4; --accent: #0b6e8a; --accent-soft: #e3f1f5; --ok: #1a7f37;
-  --term-bg: #0f1a22; --term-fg: #d6e4ea; --term-dim: #7f97a3; --term-key: #5cc8e6;
+  --bg: #f5f7f8; --surface: #ffffff; --fg: #15202a; --muted: #56646f;
+  --line: #d9e0e5; --accent: #0a6c87; --accent-ink: #ffffff; --accent-soft: #e2f0f4;
+  --term-bg: #0f1a22; --term-fg: #d6e4ea; --term-dim: #7f97a3; --term-key: #5cc8e6; --term-ok: #4ac26b;
   --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --serif: "IBM Plex Serif", Georgia, serif;
   --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d1419; --surface: #142028; --fg: #e3eaee; --muted: #9aabb6;
-    --line: #253540; --accent: #5cc8e6; --accent-soft: #15303b; --ok: #4ac26b;
+    --bg: #0c1318; --surface: #131e26; --fg: #e4ebef; --muted: #9cadb8;
+    --line: #22323d; --accent: #5cc8e6; --accent-ink: #0c1318; --accent-soft: #14303b;
     --term-bg: #081015; color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16.5px/1.65 var(--sans); }
 a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-.wrap { max-width: 920px; margin: 0 auto; padding-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right)); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right)); }
+.narrow { max-width: 680px; }
 
-header.top { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: 0; z-index: 5; }
+header.top { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
 .brand { font: 600 15px var(--mono); color: var(--fg); text-decoration: none; }
 .brand span { color: var(--accent); }
-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
 nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
 nav a:hover { color: var(--accent); }
+nav a.nav-cta { color: var(--accent); font-weight: 600; }
 
-.hero { padding-block: 56px 40px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.eyebrow { font: 500 13px var(--mono); color: var(--accent); letter-spacing: .05em; text-transform: uppercase; margin: 0 0 14px; }
+.hero { padding-block: 72px 56px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; }
 .hero > * { min-width: 0; }
-.eyebrow { font: 500 13px var(--mono); color: var(--accent); letter-spacing: .04em; text-transform: uppercase; margin: 0 0 10px; }
-h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -.01em; text-wrap: balance; }
-.lead { color: var(--muted); font-size: 17px; margin: 0 0 22px; max-width: 34em; }
+h1 { font-size: clamp(34px, 5.2vw, 52px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 18px; text-wrap: balance; }
+h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+.lead { color: var(--muted); font-size: 18px; margin: 0 0 26px; max-width: 34em; }
 .cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--accent); }
-.btn.primary { background: var(--accent); color: var(--surface); }
+.btn { display: inline-block; padding: 11px 20px; border-radius: 6px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
 .btn.ghost { color: var(--accent); }
+.status-line { display: flex; align-items: center; gap: 8px; margin-top: 18px; font: 400 13.5px var(--mono); color: var(--muted); }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--term-ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--term-ok) 25%, transparent); }
 
-.term { background: var(--term-bg); color: var(--term-fg); border-radius: 8px; font: 400 13.5px/1.7 var(--mono); padding: 18px 20px; overflow-x: auto; }
-.term .p { color: var(--term-key); }
-.term .d { color: var(--term-dim); }
-.term .ok { color: #4ac26b; }
+.term { background: var(--term-bg); color: var(--term-fg); border-radius: 10px; font: 400 13.5px/1.75 var(--mono); padding: 20px 22px; overflow-x: auto; margin: 0; }
+.term .p { color: var(--term-key); } .term .d { color: var(--term-dim); } .term .ok { color: var(--term-ok); }
 
-section { padding-block: 40px; border-top: 1px solid var(--line); }
-h2 { font-size: 24px; margin: 0 0 20px; }
-h2 small { display: block; font: 500 13px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+section { padding-block: 64px; border-top: 1px solid var(--line); }
+h2 { font-size: clamp(26px, 3.4vw, 32px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -.01em; text-wrap: balance; }
+.section-intro { color: var(--muted); margin: 0 0 32px; max-width: 38em; }
 
-.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; }
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.value { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; min-width: 0; }
+.value .k { font: 500 12.5px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+.value h3 { font-size: 18px; margin: 6px 0 8px; }
+.value p { margin: 0; color: var(--muted); font-size: 15px; }
+.value strong { color: var(--fg); }
+
+.story { display: grid; gap: 34px; }
+.chapter { display: grid; grid-template-columns: 140px 1fr; gap: 24px; }
+.chapter > div { min-width: 0; }
+.chapter .when { font: 500 13.5px var(--mono); color: var(--accent); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.chapter h3 { font-size: 19px; margin: 0 0 6px; }
+.chapter p { margin: 0 0 8px; }
+.chapter .org { color: var(--muted); font-size: 14.5px; margin: 0 0 8px; }
+blockquote { margin: 40px 0 0; padding: 22px 26px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font: italic 400 20px/1.5 var(--serif); }
+blockquote footer { font: 400 14px var(--sans); color: var(--muted); margin-top: 10px; font-style: normal; }
+
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.project h3 { font-size: 17px; margin: 0; }
+.project p { margin: 0; color: var(--muted); font-size: 15px; }
+.badge { font: 500 12px var(--mono); color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+.chip { font: 400 12.5px var(--mono); background: var(--accent-soft); color: var(--fg); padding: 3px 8px; border-radius: 4px; }
+
+.log { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--line); }
+.log li { position: relative; padding: 0 0 22px 24px; }
+.log li::before { content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.log time { font: 500 13px var(--mono); color: var(--accent); display: block; }
+.log p { margin: 2px 0 0; }
+
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 36px; }
 .skills > div { min-width: 0; }
-.skills h3 { font-size: 15px; margin: 0 0 6px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font: 400 13px var(--mono); background: var(--accent-soft); color: var(--fg); padding: 3px 8px; border-radius: 4px; }
+.skills h3 { font-size: 15px; margin: 0 0 8px; }
+.skills .chips { margin-top: 0; padding-top: 0; }
 
-.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.project { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.project h3 { font-size: 16px; margin: 0; }
-.project p { margin: 0; color: var(--muted); font-size: 14.5px; }
-.status { font: 500 12px var(--mono); color: var(--accent); }
-.project .tags { margin-top: auto; padding-top: 6px; }
+.closing { background: var(--surface); }
+.closing .box { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.closing .box > * { min-width: 0; }
+.contact-list { display: grid; gap: 10px; font-size: 16px; }
+.contact-list span { color: var(--muted); font: 400 13px var(--mono); display: block; }
+footer.site { padding-block: 28px 44px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
-.timeline { display: grid; gap: 22px; }
-.job { display: grid; grid-template-columns: 150px 1fr; gap: 20px; }
-.job > div { min-width: 0; }
-.job .when { font: 400 13.5px var(--mono); color: var(--muted); padding-top: 2px; }
-.job h3 { font-size: 16px; margin: 0; }
-.job .org { color: var(--muted); font-size: 14.5px; margin: 0 0 6px; }
-.job ul { margin: 0; padding-left: 18px; }
-.job li { margin-bottom: 4px; }
-.num { font-variant-numeric: tabular-nums; }
-
-.contact { display: flex; gap: 12px 28px; flex-wrap: wrap; font-size: 16px; }
-footer { padding-block: 28px 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
-
-@media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; padding-top: 36px; }
-  .skills, .projects { grid-template-columns: 1fr; }
-  .job { grid-template-columns: 1fr; gap: 4px; }
-  nav { gap: 14px; }
+@media (max-width: 800px) {
+  .hero, .closing .box { grid-template-columns: 1fr; gap: 32px; }
+  .hero { padding-top: 44px; }
+  .values, .projects, .skills { grid-template-columns: 1fr; }
+  .chapter { grid-template-columns: 1fr; gap: 4px; }
+  section { padding-block: 48px; }
 }
 </style>
 </head>
@@ -100,10 +122,10 @@ footer { padding-block: 28px 40px; color: var(--muted); font-size: 13px; border-
   <div class="wrap">
     <a class="brand" href="#">miguel<span>@</span>network:~$</a>
     <nav aria-label="Sections">
-      <a href="#skills">Skills</a>
+      <a href="#story">Story</a>
       <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <a href="#log">Lab log</a>
+      <a class="nav-cta" href="#contact">Work with me</a>
     </nav>
   </div>
 </header>
@@ -111,128 +133,169 @@ footer { padding-block: 28px 40px; color: var(--muted); font-size: 13px; border-
 <main>
   <div class="wrap hero">
     <div>
-      <p class="eyebrow">CCNA certified · Ontario, Canada</p>
-      <h1>Miguel Sanchez, Network Technician</h1>
-      <p class="lead">Five years inside Cisco Systems supporting network infrastructure programs for Duke Energy and Walmart, now building and documenting hands-on labs in routing, switching and network automation.</p>
+      <p class="eyebrow">Network Technician · CCNA certified · Ontario, Canada</p>
+      <h1>Five years planning the networks behind the power grid. <em>Now I build them.</em></h1>
+      <p class="lead">I spent five years inside Cisco on network programs for Duke Energy and Walmart. Now CCNA certified, I bring that hardware and delivery experience to hands-on network work.</p>
       <div class="cta">
-        <a class="btn primary" href="Miguel_Sanchez_Resume.pdf">Download resume</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/miguel-sanchez-4389851b7/">LinkedIn</a>
+        <a class="btn primary" href="#contact">Let’s work together</a>
+        <a class="btn ghost" href="Miguel_Sanchez_Resume.pdf">Download resume</a>
       </div>
+      <p class="status-line"><span class="dot" aria-hidden="true"></span>Open to NOC, network and field technician roles · Niagara, GTA or remote</p>
     </div>
     <pre class="term" aria-label="Profile summary written as router output"><span class="p">MIGUEL#</span> show profile
-<span class="d">Certification ......</span> CCNA 200-301 <span class="ok">[active]</span>
-<span class="d">Experience .........</span> Cisco Systems, 2021-2026
-<span class="d">Focus ..............</span> Routing, switching, WLAN
-<span class="d">Learning ...........</span> Linux, Python, Ansible
-<span class="d">Location ...........</span> St. Catharines, ON
-<span class="d">Work mode ..........</span> On-site / hybrid / remote
-<span class="d">Relocation .........</span> Yes
+<span class="d">Certification ....</span> CCNA 200-301 <span class="ok">[active]</span>
+<span class="d">Experience .......</span> Cisco Systems, 2021-2026
+<span class="d">Customers ........</span> Duke Energy, Walmart
+<span class="d">Focus ............</span> Routing, switching, WLAN
+<span class="d">Learning .........</span> Linux, Python, Ansible
+<span class="d">Next goal ........</span> CCNP Enterprise
+<span class="d">Relocation .......</span> Yes
 <span class="p">MIGUEL#</span> <span class="d">_</span></pre>
   </div>
 
-  <section id="skills">
+  <section id="value">
     <div class="wrap">
-      <h2><small>show skills</small>Technical skills</h2>
-      <div class="skills">
-        <div>
-          <h3>Switching and routing</h3>
-          <div class="chips"><span class="chip">VLANs / 802.1Q</span><span class="chip">STP / RSTP</span><span class="chip">EtherChannel</span><span class="chip">OSPFv2</span><span class="chip">Static routing</span><span class="chip">HSRP</span><span class="chip">IPv4 / IPv6</span></div>
+      <p class="eyebrow">What I bring</p>
+      <h2>A technician who already understands the whole project</h2>
+      <p class="section-intro">Most junior technicians know the CLI. I also know how a network refresh is scoped, budgeted and delivered, because I spent five years doing it.</p>
+      <div class="values">
+        <article class="value">
+          <span class="k">Hardware</span>
+          <h3>I know the equipment</h3>
+          <p>Routers, switches, chassis, SFP optics, fiber, racks and power. I specified all of it for <strong>Duke Energy’s six-state substation network refresh</strong>.</p>
+        </article>
+        <article class="value">
+          <span class="k">Delivery</span>
+          <h3>I speak engineer and project manager</h3>
+          <p><strong>10+ network projects</strong> for Cisco Premier accounts. I work well between engineers, vendors and deadlines.</p>
+        </article>
+        <article class="value">
+          <span class="k">Accuracy</span>
+          <h3>I find what others miss</h3>
+          <p>Caught outdated costs that corrected projected spend by <strong>$1M</strong>, and turned a week of manual data intake into <strong>two days</strong>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow">My story</p>
+      <h2>How I got from the plan to the packet</h2>
+      <p class="section-intro">Every network I worked around made me want to understand it more deeply. This is how that curiosity became a career.</p>
+      <div class="story narrow">
+        <div class="chapter">
+          <div class="when">2012 – 2017</div>
+          <div>
+            <h3>Help desk and field operations in Bogotá</h3>
+            <p class="org">Open English · Outsourcing SAS for Claro</p>
+            <p>I started in technical support, troubleshooting for students on an online learning platform. Later I led a five-person team coordinating Claro’s home-service field operations: assigning work, tracking technicians and reporting results.</p>
+          </div>
         </div>
-        <div>
-          <h3>Services and security</h3>
-          <div class="chips"><span class="chip">DHCP</span><span class="chip">NAT / PAT</span><span class="chip">ACLs</span><span class="chip">Port security</span><span class="chip">DHCP snooping</span><span class="chip">DAI</span><span class="chip">SSH</span><span class="chip">SNMP / Syslog / NTP</span></div>
+        <div class="chapter">
+          <div class="when">2021 – 2026</div>
+          <div>
+            <h3>Inside Cisco, where it clicked</h3>
+            <p class="org">Project Specialist, then Inventory Project Manager</p>
+            <p>Planning hardware for Duke Energy, I saw how a set of well-chosen routers, switches and fiber links connects the substations that deliver electricity to millions of customers. I wanted to understand every connection and every packet, not just the spreadsheet.</p>
+          </div>
         </div>
-        <div>
-          <h3>Wireless and hardware</h3>
-          <div class="chips"><span class="chip">WLC / CAPWAP</span><span class="chip">WPA2 / WPA3</span><span class="chip">Cisco routers and switches</span><span class="chip">SFP optics</span><span class="chip">Fiber and copper</span><span class="chip">Racks and power</span></div>
+        <div class="chapter">
+          <div class="when">2026</div>
+          <div>
+            <h3>From curiosity to certification</h3>
+            <p class="org">Cisco Certified Network Associate (CCNA 200-301)</p>
+            <p>I studied on my own and passed the CCNA in November 2026: switching, routing, wireless, security and automation, from electrical signals on the wire to the life cycle of a packet.</p>
+          </div>
         </div>
-        <div>
-          <h3>Tools</h3>
-          <div class="chips"><span class="chip">Packet Tracer</span><span class="chip">Python</span><span class="chip">Git</span><span class="chip">Jira</span><span class="chip">Power BI</span><span class="chip">Excel VBA</span><span class="chip">SQL</span></div>
+        <div class="chapter">
+          <div class="when">Next</div>
+          <div>
+            <h3>Building, documenting, growing</h3>
+            <p>Supermarkets, banks, utilities: everything runs on a network. I want to be one of the people who keeps it running. I’m building documented labs, learning Linux and Python, and working toward the CCNP.</p>
+          </div>
         </div>
       </div>
+      <blockquote class="narrow">Every time I go deeper into networking, I find more to discover. That is what keeps me moving forward.
+        <footer>Miguel Sanchez</footer>
+      </blockquote>
     </div>
   </section>
 
   <section id="projects">
     <div class="wrap">
-      <h2><small>show projects</small>Lab projects</h2>
+      <p class="eyebrow">Lab projects</p>
+      <h2>Proof, not promises</h2>
+      <p class="section-intro">Each project is documented as a case study: the problem, the design, the configuration, the tests, and what I learned when something broke.</p>
       <div class="projects">
         <article class="project">
-          <span class="status">In progress</span>
+          <span class="badge">In progress</span>
           <h3>Small office network</h3>
-          <p>Two VLANs, 802.1Q trunk, router-on-a-stick, DHCP, PAT to the internet, SSH-only management protected by an ACL.</p>
-          <div class="chips tags"><span class="chip">VLAN</span><span class="chip">NAT</span><span class="chip">ACL</span></div>
+          <p>Two VLANs, an 802.1Q trunk, router-on-a-stick, DHCP, PAT to the internet, and SSH-only management protected by an ACL.</p>
+          <div class="chips"><span class="chip">VLAN</span><span class="chip">NAT</span><span class="chip">ACL</span></div>
         </article>
         <article class="project">
-          <span class="status">Planned</span>
+          <span class="badge">Planned</span>
           <h3>Redundant campus</h3>
-          <p>Three switches with Rapid PVST+ and LACP, SVIs and OSPF between two routers. Includes failure tests and convergence notes.</p>
-          <div class="chips tags"><span class="chip">RSTP</span><span class="chip">LACP</span><span class="chip">OSPF</span></div>
+          <p>Three switches with Rapid PVST+ and LACP, SVIs, and OSPF between two routers, with failure tests and convergence notes.</p>
+          <div class="chips"><span class="chip">RSTP</span><span class="chip">LACP</span><span class="chip">OSPF</span></div>
         </article>
         <article class="project">
-          <span class="status">Planned</span>
+          <span class="badge">Planned</span>
           <h3>Config backup automation</h3>
           <p>A Python script using Netmiko that backs up the running configuration of every device in the campus lab.</p>
-          <div class="chips tags"><span class="chip">Python</span><span class="chip">Netmiko</span><span class="chip">Git</span></div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Netmiko</span><span class="chip">Git</span></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="experience">
+  <section id="log">
     <div class="wrap">
-      <h2><small>show history</small>Experience</h2>
-      <div class="timeline">
-        <div class="job">
-          <div class="when num">2024 – 2026</div>
-          <div>
-            <h3>Inventory Project Manager</h3>
-            <p class="org">Cisco Systems (via Experis / Veritaaq)</p>
-            <ul>
-              <li>Planned all network hardware for Duke Energy’s multi-state infrastructure refresh, covering substation and generation-site networks in six US states.</li>
-              <li>Specified routers, switches, chassis, SFP optics, cabling, racks and power against engineering designs.</li>
-              <li>Corrected projected hardware spend by <span class="num">$1M</span> and cut data intake from 1 week to 2 days with a VBA tool.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="when num">2021 – 2024</div>
-          <div>
-            <h3>Project Specialist</h3>
-            <p class="org">Cisco Systems (via The Select Group &amp; Capgemini)</p>
-            <ul>
-              <li>Coordinated <span class="num">10+</span> IT and network projects for Cisco Premier accounts, including Walmart and Duke Energy.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="when num">2012 – 2020</div>
-          <div>
-            <h3>Earlier roles in Colombia</h3>
-            <p class="org">Close Up International, Outsourcing SAS (Claro), Open English</p>
-            <ul>
-              <li>Led a 5-person team running Claro field-service disconnection operations; earlier, full-time IT help desk support.</li>
-            </ul>
-          </div>
-        </div>
+      <p class="eyebrow">Lab log</p>
+      <h2>What I’m working on</h2>
+      <p class="section-intro">Short, dated notes on what I build and learn each week.</p>
+      <ol class="log narrow">
+        <li><time datetime="2026-11-10">Nov 10, 2026</time><p>Launched this site and started Project 1: small office network.</p></li>
+        <li><time datetime="2026-11-07">Nov 7, 2026</time><p>Passed the Cisco CCNA 200-301 exam.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow">Technical skills</p>
+      <h2>What I work with</h2>
+      <div class="skills" style="margin-top:24px">
+        <div><h3>Switching and routing</h3><div class="chips"><span class="chip">VLANs / 802.1Q</span><span class="chip">STP / RSTP</span><span class="chip">EtherChannel</span><span class="chip">OSPFv2</span><span class="chip">Static routing</span><span class="chip">HSRP</span><span class="chip">IPv4 / IPv6</span></div></div>
+        <div><h3>Services and security</h3><div class="chips"><span class="chip">DHCP</span><span class="chip">NAT / PAT</span><span class="chip">ACLs</span><span class="chip">Port security</span><span class="chip">DHCP snooping</span><span class="chip">DAI</span><span class="chip">SSH</span><span class="chip">SNMP / Syslog / NTP</span></div></div>
+        <div><h3>Wireless and hardware</h3><div class="chips"><span class="chip">WLC / CAPWAP</span><span class="chip">WPA2 / WPA3</span><span class="chip">Cisco routers and switches</span><span class="chip">SFP optics</span><span class="chip">Fiber and copper</span><span class="chip">Racks and power</span></div></div>
+        <div><h3>Tools</h3><div class="chips"><span class="chip">Packet Tracer</span><span class="chip">Python</span><span class="chip">Git</span><span class="chip">Jira</span><span class="chip">Power BI</span><span class="chip">Excel VBA</span><span class="chip">SQL</span></div></div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="wrap">
-      <h2><small>show contact</small>Contact</h2>
-      <div class="contact">
-        <span>Email: <a href="mailto:sirkronos@hotmail.com">sirkronos@hotmail.com</a></span>
-        <a href="https://www.linkedin.com/in/miguel-sanchez-4389851b7/">LinkedIn</a>
-        <a href="https://github.com/Miguel-sanchez-net">GitHub</a>
+  <section id="contact" class="closing">
+    <div class="wrap box">
+      <div>
+        <p class="eyebrow">Let’s work together</p>
+        <h2>Hiring for a network role? I’d like to hear about it.</h2>
+        <p class="section-intro" style="margin-bottom:22px">I’m available now for NOC, network technician and field roles in the Niagara region, the GTA or remote, and I’m open to relocating.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:sirkronos@hotmail.com">Email me</a>
+          <a class="btn ghost" href="Miguel_Sanchez_Resume.pdf">Download resume</a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <div><span>Email</span>sirkronos@hotmail.com</div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/miguel-sanchez-4389851b7/">linkedin.com/in/miguel-sanchez-4389851b7</a></div>
+        <div><span>GitHub</span><a href="https://github.com/Miguel-sanchez-net">github.com/Miguel-sanchez-net</a></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
+<footer class="site">
   <div class="wrap">Miguel Sanchez · St. Catharines, Ontario · Diplomas from Niagara College and SENA</div>
 </footer>
 
